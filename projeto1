@@ -1,0 +1,49 @@
+print ('_'*40)
+print ('|')
+print ('|',end = '')
+print (' '*10,end = '')
+print ('Projeto')
+print ('|')
+print ('|',end = '     ')
+resp = input('deseja começar? {s/n}: ')
+print ('|')
+while(resp not in('s','n')):
+    print ('|',end = '     ')
+    resp = input('digite um valor válido {s/n}: ')
+campeao = ''
+maiormedia = 0
+while (resp == 's'):
+    print ('|',end = '     ')
+    nome = input("Digite o nome do atleta: ")
+    print ('|')
+    print ('|',end = '     ')
+    p = float(input("Digite o valor do 1º salto: "))
+    maior = p
+    menor = p
+    soma = p
+    for x in range(2,6):
+        print ('|',end = '     ')
+        p = float(input(f'Digite o valor do {x} salto:'))
+        if(p > maior):
+            maior = p
+        elif(p < menor):
+            menor = p
+        soma = soma+p
+    media = (soma - maior - menor)/3
+    if (media >= maiormedia):
+        maiormedia = media
+        campeao = nome
+    print ('|')
+    print ('|',end = '     ')
+    print(f'Melhor salto: {maior}m\n|     Pior salto: {menor}m\n|     Média dos demais saltos: {media:.1f}m\n|     Resultado Final:\n|     {nome}: {media:.1f}m')
+    print ('|')
+    print ('|',end = '     ')
+    resp = input('deseja continuar? {s/n}: ')
+    while(resp not in('s','n')):
+        print ('|',end = '     ')
+        resp = input('digite um valor válido {s/n}: ')
+if campeao:
+    print ('|')
+    print ('|',end = '     ')
+    print("ATLETA CAMPEÃO: ",campeao.upper())
+print ('|_________________________________________________')
