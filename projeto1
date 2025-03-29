@@ -90,4 +90,5 @@ if campeao:
     print('|')
     print('|', end='     ')
     print("ATLETA CAMPEÃO: ", campeao.upper())
-print('|_________________________________________________')
+print('|', end='')
+print('_' * 40)
