@@ -1,0 +1,35 @@
+# while True:
+b = 0
+d = []
+f = []
+a = input('digite seu cpf')
+x = list(a)
+if len(a) == 11:
+    if a.isalnum():
+        for i in range(len(x)):
+            x[i] = int(x[i])
+        for c in range (1, 10):
+            e = x[c-1] * (11 - c)
+            d.append(x[c-1])
+            b = b + e
+        if b % 11 < 2:
+            p = 0
+            d.append(p)
+        else:
+            p = 11 - (b % 11)
+            d.append(p)
+        b = 0
+        for c in range (1, 11):
+            e = d[c-1] * (12 - c)
+            f.append(d[c-1])
+            b = b + e
+        if b % 11 < 2:
+            p = 0
+            f.append(p)
+        else:
+            p = 11 - (b % 11)
+            f.append(p)
+        if x == f:
+            print('cpf valido')
+        else:
+            print('cpf invalido')
