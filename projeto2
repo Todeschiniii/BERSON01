@@ -1,4 +1,5 @@
 g = int(input('quer comecar (0 para sim e 1 para nao)'))
+z = []
 while True:
     if g == 0:
         b = 0
@@ -26,9 +27,11 @@ while True:
                     p = 11 - (b % 11)
                 d.append(p)
                 if x == d:
-                    print('cpf valido')   
+                    t = 'valido'
                 else:
-                    print('cpf invalido')
+                    t = 'invalido'
+                q = {'CPF':x,'validacao':t}
+                z.append(q)
                 g = int(input('quer continuar (0 para sim e 1 para nao)'))
             else:
                 print('ERRO - CPF sao numeros')
@@ -38,4 +41,12 @@ while True:
             break
     else:
         break
+# D)	APÓS O USUÁRIO RESPONDER QUE NÃO DESEJA MAIS TESTAR CPFS, 
+# percorra a lista que guarda os dicionários, para contabilizar e mostrar os seguintes dados: 
+total = len(z)
+print(f'total de cpf = {total}')
+print(x)
+print(q)
+print(t)
+print(z)
      
