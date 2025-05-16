@@ -1,5 +1,5 @@
+g = int(input('quer comecar (0 para sim e 1 para nao)'))
 while True:
-    g = int(input('quer comecar (0 para sim e 1 para nao)'))
     if g == 0:
         b = 0
         d = []
@@ -26,16 +26,16 @@ while True:
                     p = 11 - (b % 11)
                 d.append(p)
                 if x == d:
-                    print('cpf valido')
-                    g = int(input('quer continuar (0 para sim e 1 para nao)'))
+                    print('cpf valido')   
                 else:
                     print('cpf invalido')
-                
+                g = int(input('quer continuar (0 para sim e 1 para nao)'))
             else:
-                print('ERRO - CPF com ')
+                print('ERRO - CPF sao numeros')
         else:
             print('ERRO - CPF com menos de 11 digitos')
-        
+        if g != 0:
+            break
     else:
         break
      
