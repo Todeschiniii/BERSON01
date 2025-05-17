@@ -1,52 +1,61 @@
-g = int(input('quer comecar (0 para sim e 1 para nao)'))
-z = []
+comeco = int(input('quer comecar (0 para sim e 1 para nao)'))
+CPF_LD = []
 while True:
-    if g == 0:
-        b = 0
-        d = []
-        a = input('digite seu cpf')
-        x = list(a)
-        if len(a) == 11:
-            if a.isalnum():
-                for i in range(len(x)):
-                    x[i] = int(x[i])
+    if comeco == 0:
+        soma = 0
+        CPF_G = []
+        CPF = input('digite seu cpf')
+        CPF_L = list(CPF)
+        if len(CPF) == 11:
+            if CPF.isalnum():
+                for i in range(len(CPF_L)):
+                    CPF_L[i] = int(CPF_L[i])
                 for c in range (1, 10):
-                    b += x[c-1] * (11 - c)
-                    d.append(x[c-1])
-                if b % 11 < 2:
-                    p = 0
+                    soma += CPF_L[c-1] * (11 - c)
+                    CPF_G.append(CPF_L[c-1])
+                if soma % 11 < 2:
+                    Digit = 0
                 else:
-                    p = 11 - (b % 11)
-                d.append(p)
-                b = 0
+                    Digit = 11 - (soma % 11)
+                CPF_G.append(Digit)
+                soma = 0
                 for c in range (1, 11):
-                    b += d[c-1] * (12 - c)
-                if b % 11 < 2:
-                    p = 0
+                    soma += CPF_G[c-1] * (12 - c)
+                if soma % 11 < 2:
+                    Digit = 0
                 else:
-                    p = 11 - (b % 11)
-                d.append(p)
-                if x == d:
-                    t = 'valido'
+                    Digit = 11 - (soma % 11)
+                CPF_G.append(Digit)
+                if CPF_L == CPF_G:
+                    validacao = 'valido'
                 else:
-                    t = 'invalido'
-                q = {'CPF':x,'validacao':t}
-                z.append(q)
-                g = int(input('quer continuar (0 para sim e 1 para nao)'))
-            else:
+                    validacao = 'invalido'
+                CPF_D = {'CPF':CPF_L,'validacao':validacao}
+                CPF_LD.append(CPF_D)
+                comeco = int(input('quer continuar (0 para sim e 1 para nao)'))
+            elif CPF.isalpha():
                 print('ERRO - CPF sao numeros')
         else:
             print('ERRO - CPF com menos de 11 digitos')
-        if g != 0:
+        if comeco != 0:
             break
     else:
         break
-# D)	APÓS O USUÁRIO RESPONDER QUE NÃO DESEJA MAIS TESTAR CPFS, 
-# percorra a lista que guarda os dicionários, para contabilizar e mostrar os seguintes dados: 
-total = len(z)
+total = len(CPF_LD)
+v = 0
+iv = 0
+for i in CPF_LD:
+    if i['validacao'] == 'valido':
+        v += 1
+    else:
+        iv += 1
+if total > 0:
+    porc_v = (v / total) * 100
+    porc_iv = (iv / total) * 100
+else:
+    porc_v = porc_iv = 0
 print(f'total de cpf = {total}')
-print(x)
-print(q)
-print(t)
-print(z)
-     
+print(f'cpf validos = {v}')
+print(f'cpf invalidos = {iv}')
+print(f'porcentagem de cpf validos = {porc_v:.2f}%')
+print(f'porcentagem de cpf invalidos = {porc_iv:.2f}%')   
