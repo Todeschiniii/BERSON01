@@ -102,6 +102,6 @@ print(f'porcentagem de cpf invalidos = {porc_iv:.2f}%')
 for i in CPF_LD:
     print('|')
     print('|', end='     ')
-    print(CPF_LD[i])
+    print(i)
 print('|', end='')
 print('_' * 40) 
