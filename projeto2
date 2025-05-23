@@ -1,8 +1,8 @@
 print('_' * 40)
 print('|')
 print('|', end='')
-print(' ' * 15, end='')
-print('Projeto')
+print(' ' * 12, end='')
+print('Projeto 02')
 print('|', end='')
 print("""
 |             __-------__
@@ -11,7 +11,7 @@ print("""
 |          | |           | |
 |          |_|___________|_|
 |      /-\|                 |/-\ 
-|     | _ |\       0       /| _ |
+|     | _ |\      5 6      /| _ |
 |     |(_)| \      !      / |(_)|
 |     |___|__\_____!_____/__|___|
 |     [_________|herbie|________] 
@@ -62,11 +62,11 @@ while True:
             elif CPF.isalpha():
                 print('|')
                 print('|', end='     ')
-                print('ERRO - CPF sao numeros')
+                print('\033[31mERRO - CPF sao numeros\033[0m')
         else:
             print('|')
             print('|', end='     ')
-            print('ERRO - CPF com menos de 11 digitos')
+            print('\033[31mERRO - CPF com menos de 11 digitos\033[0m')
         if comeco != 0:
             break
     else:
