@@ -31,7 +31,7 @@ while True:
         CPF = input('digite seu cpf')
         CPF_L = list(CPF)
         if len(CPF) == 11:
-            if CPF.isalnum():
+            if CPF.isdigit():
                 for i in range(len(CPF_L)):
                     CPF_L[i] = int(CPF_L[i])
                 for c in range (1, 10):
